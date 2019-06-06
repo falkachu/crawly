@@ -13,3 +13,6 @@
 
 # IDEA IDE
 .idea
+
+# XML Files
+*.xml
