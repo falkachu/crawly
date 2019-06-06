@@ -22,29 +22,25 @@ type AllNewsAA struct {
 	News []NewsEntryAA `xml:"url"`
 }
 
-func Hello() {
-	fmt.Println("Hallo, ich bin eine Nachricht :)")
-}
-
 func checkError(err error) {
 	if err != nil {
 		panic(err)
 	}
 }
 
-func XMLGUnzip(xmlzip io.Reader) []byte{
-	zw, err := gzip.NewReader(xmlzip)
+func gUnzip(zipdata io.Reader) []byte{
+	zw, err := gzip.NewReader(zipdata)
 	checkError(err)
 
-	xmlunzip, err := ioutil.ReadAll(zw)
+	unzipdata, err := ioutil.ReadAll(zw)
 
 	checkError(err)
-	checkError(ioutil.WriteFile("news.xml", xmlunzip, 0777))
+	checkError(ioutil.WriteFile("news.xml", unzipdata, 0777))
 
-	return xmlunzip
+	return unzipdata
 }
 
-func XMLtoObject(xmldata []byte) {
+func parseXml(xmldata []byte) {
 	var news AllNewsAA
 
 	// Try to Unsmarshal XML to Struct Slice
@@ -53,7 +49,7 @@ func XMLtoObject(xmldata []byte) {
 	fmt.Printf("Es wurden %v Nachrichten gefunden\n", len(news.News))
 }
 
-func GetXMLData(url string) []byte{
+func getData(url string) []byte{
 	var body []byte
 
 	resp, err := http.Get(url)
@@ -62,7 +58,7 @@ func GetXMLData(url string) []byte{
 
 	if strings.Contains(url, ".gz"){
 		fmt.Printf("content encoded with gzip\n")
-		body = XMLGUnzip(resp.Body)
+		body = gUnzip(resp.Body)
 	} else {
 		fmt.Println("content not encoded")
 		body, err = ioutil.ReadAll(resp.Body)
