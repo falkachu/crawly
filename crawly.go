@@ -10,8 +10,8 @@ import (
 	"strings"
 )
 
-// Check for error message
-func Check(err error) {
+// check for error message
+func check(err error) {
 	if err != nil {
 		log.Println(err)
 	}
@@ -21,10 +21,10 @@ func Check(err error) {
 func Gunzip(zipdata io.Reader) []byte {
 	log.Println("unzipping data...")
 	zw, err := gzip.NewReader(zipdata)
-	Check(err)
+	check(err)
 
 	unzipdata, err := ioutil.ReadAll(zw)
-	Check(err)
+	check(err)
 
 	log.Println("data unziped")
 	return unzipdata
@@ -34,7 +34,7 @@ func Gunzip(zipdata io.Reader) []byte {
 func ParseXml(xmldata []byte, dest interface{}) {
 	log.Println("parsing xml...")
 	// Try to Unsmarshal XML to Struct Slice
-	Check(xml.Unmarshal(xmldata, &dest))
+	check(xml.Unmarshal(xmldata, &dest))
 	log.Println("xml parsed")
 }
 
@@ -45,7 +45,7 @@ func GetData(url string) []byte {
 	var body []byte
 
 	resp, err := http.Get(url)
-	Check(err)
+	check(err)
 	defer resp.Body.Close()
 
 	if strings.Contains(url, ".gz") {
@@ -54,7 +54,7 @@ func GetData(url string) []byte {
 	} else {
 		log.Println("content not encoded")
 		body, err = ioutil.ReadAll(resp.Body)
-		Check(err)
+		check(err)
 	}
 
 	log.Println("data recieved")
