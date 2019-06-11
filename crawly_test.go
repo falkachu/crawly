@@ -1,8 +1,14 @@
 package crawly
 
-import "testing"
+import (
+	"log"
+	"testing"
+)
 
 func TestCrawly(t *testing.T) {
-	url := "https://www.augsburger-allgemeine.de/sitemap/sitemap-2019-06-05-p00.xml.gz"
-	parseXml(getData(url))
+	log.SetFlags(log.LstdFlags | log.Lmicroseconds)
+	url := "https://www.augsburger-allgemeine.de/news.xml"
+	var news AllNewsAA
+
+	parseXml(getData(url), &news)
 }

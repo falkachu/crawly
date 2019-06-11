@@ -3,67 +3,60 @@ package crawly
 import (
 	"compress/gzip"
 	"encoding/xml"
-	"fmt"
 	"io"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"strings"
 )
 
-type NewsEntryAA struct {
-	Newspaper string   `xml:"news:name"`
-	URL       string   `xml:"loc"`
-	Date      string   `xml:"news:publication_date"`
-	Title     string   `xml:"news:title"`
-	Keywords  []string `xml:"news:keywords"`
-}
-
-type AllNewsAA struct {
-	News []NewsEntryAA `xml:"url"`
-}
-
-func checkError(err error) {
+// check for error message
+func check(err error) {
 	if err != nil {
-		panic(err)
+		log.Println(err)
 	}
 }
 
+// gUnzip unzip ziped data from byte array
 func gUnzip(zipdata io.Reader) []byte{
+	log.Println("unzipping data...")
 	zw, err := gzip.NewReader(zipdata)
-	checkError(err)
+	check(err)
 
 	unzipdata, err := ioutil.ReadAll(zw)
+	check(err)
 
-	checkError(err)
-	checkError(ioutil.WriteFile("news.xml", unzipdata, 0777))
-
+	log.Println("data unziped")
 	return unzipdata
 }
 
-func parseXml(xmldata []byte) {
-	var news AllNewsAA
-
+// parseXML parse xml byte data into struct
+func parseXml(xmldata []byte, dest interface{}){
+	log.Println("parsing xml...")
 	// Try to Unsmarshal XML to Struct Slice
-	checkError(xml.Unmarshal(xmldata, &news))
-
-	fmt.Printf("Es wurden %v Nachrichten gefunden\n", len(news.News))
+	check(xml.Unmarshal(xmldata, &dest))
+	log.Println("xml parsed")
 }
 
+// getData from URL and return the byte array
 func getData(url string) []byte{
+	log.Println("getting data from url...")
+
 	var body []byte
 
 	resp, err := http.Get(url)
-	checkError(err)
+	check(err)
 	defer resp.Body.Close()
 
 	if strings.Contains(url, ".gz"){
-		fmt.Printf("content encoded with gzip\n")
+		log.Println("content encoded with gzip")
 		body = gUnzip(resp.Body)
 	} else {
-		fmt.Println("content not encoded")
+		log.Println("content not encoded")
 		body, err = ioutil.ReadAll(resp.Body)
-		checkError(err)
+		check(err)
 	}
 
+	log.Println("data recieved")
 	return body
 }
