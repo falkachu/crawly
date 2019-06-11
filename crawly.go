@@ -48,6 +48,7 @@ func GetData(url string) []byte {
 	check(err)
 	defer resp.Body.Close()
 
+	// check for gzip data, unzip if needed
 	if strings.Contains(url, ".gz") {
 		log.Println("content encoded with gzip")
 		body = Gunzip(resp.Body)
