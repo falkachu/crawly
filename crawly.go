@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"sync"
 )
 
 // check for error message
@@ -18,7 +19,7 @@ func check(err error) {
 }
 
 // Gunzip unzip ziped data from byte array
-func Gunzip(zipdata io.Reader) []byte {
+func gunzip(zipdata io.Reader) []byte {
 	log.Println("unzipping data...")
 	zw, err := gzip.NewReader(zipdata)
 	check(err)
@@ -31,15 +32,15 @@ func Gunzip(zipdata io.Reader) []byte {
 }
 
 // parseXML parse xml byte data into struct
-func ParseXml(xmldata []byte, dest interface{}) {
+func parseXml(xmldata *[]byte, dest interface{}) {
 	log.Println("parsing xml...")
 	// Try to Unsmarshal XML to Struct Slice
-	check(xml.Unmarshal(xmldata, &dest))
+	check(xml.Unmarshal(*xmldata, &dest))
 	log.Println("xml parsed")
 }
 
 // GetData from URL and return the byte array
-func GetData(url string) []byte {
+func getData(url string) []byte {
 	log.Println("getting data from url...")
 
 	var body []byte
@@ -51,13 +52,47 @@ func GetData(url string) []byte {
 	// check for gzip data, unzip if needed
 	if strings.Contains(url, ".gz") {
 		log.Println("content encoded with gzip")
-		body = Gunzip(resp.Body)
+		body = gunzip(resp.Body)
 	} else {
 		log.Println("content not encoded")
 		body, err = ioutil.ReadAll(resp.Body)
 		check(err)
 	}
 
-	log.Println("data recieved")
+	log.Println("data received")
 	return body
+}
+
+func checkKeywords(dest interface{}) {
+	log.Println("checking keywords")
+	switch tsrc := dest.(type) {
+	case NewsAA:
+		var filterNews NewsAA
+
+		log.Println("type identified as NewsAA")
+
+		for _, n := range tsrc.News {
+			if strings.Contains(strings.ToLower(n.URL), "gewerbegebiet") {
+				filterNews.News = append(filterNews.News, n)
+			}
+		}
+		dest = filterNews
+
+	default:
+		log.Panic("unkown Type")
+	}
+}
+
+func CrawlURL(wg *sync.WaitGroup, url string) {
+	defer wg.Done()
+
+	var augsburger NewsAA
+
+	body := getData(url)
+	parseXml(&body, &augsburger)
+	checkKeywords(&augsburger)
+
+	for _, n := range augsburger.News{
+		log.Println(n.URL)
+	}
 }
