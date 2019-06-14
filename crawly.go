@@ -65,8 +65,10 @@ func getData(url string) []byte {
 
 func checkKeywords(dest interface{}) {
 	log.Println("checking keywords")
+
 	switch tsrc := dest.(type) {
-	case NewsAA:
+
+	case *NewsAA:
 		var filterNews NewsAA
 
 		log.Println("type identified as NewsAA")
@@ -76,7 +78,7 @@ func checkKeywords(dest interface{}) {
 				filterNews.News = append(filterNews.News, n)
 			}
 		}
-		dest = filterNews
+		*tsrc = filterNews
 
 	default:
 		log.Panic("unkown Type")
