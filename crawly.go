@@ -25,10 +25,15 @@ func gunzip(zipdata io.Reader) []byte {
 	check(err)
 
 	unzipdata, err := ioutil.ReadAll(zw)
-	check(err)
+	if err != nil {
+		log.Println("could not unzip data... return empty object")
+		var emptydata = []byte("")
+		return emptydata
+	} else {
+		log.Println("data unziped")
+		return unzipdata
+	}
 
-	log.Println("data unziped")
-	return unzipdata
 }
 
 // parseXML parse xml byte data into struct
@@ -95,6 +100,6 @@ func CrawlURL(wg *sync.WaitGroup, url string) {
 	checkKeywords(&augsburger)
 
 	for _, n := range augsburger.News{
-		log.Println(n.URL)
+		log.Println(n.Title)
 	}
 }
