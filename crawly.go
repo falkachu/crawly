@@ -69,7 +69,7 @@ func getData(url string) []byte {
 }
 
 func checkKeywords(dest interface{}) {
-	log.Println("checking keywords")
+	log.Println("checking keywords...")
 
 	switch tsrc := dest.(type) {
 
@@ -83,16 +83,33 @@ func checkKeywords(dest interface{}) {
 				filterNews.News = append(filterNews.News, n)
 			}
 		}
+
+		if len(filterNews.News) == 0 {
+			log.Println("no elements found")
+		}
+
 		*tsrc = filterNews
 
 	default:
-		log.Panic("unkown Type")
+		log.Panic("unkown type")
 	}
 }
 
-func CrawlURL(wg *sync.WaitGroup, url string) {
+func CrawlMultiURL(wg *sync.WaitGroup, url string) {
 	defer wg.Done()
 
+	var augsburger NewsAA
+
+	body := getData(url)
+	parseXml(&body, &augsburger)
+	checkKeywords(&augsburger)
+
+	for _, n := range augsburger.News{
+		log.Println(n.URL)
+	}
+}
+
+func CrawlURL(url string) {
 	var augsburger NewsAA
 
 	body := getData(url)

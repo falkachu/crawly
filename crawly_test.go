@@ -3,21 +3,21 @@ package crawly
 import (
 	"log"
 	"os"
-	"sync"
 	"testing"
 )
 
+/*
 func TestCrawly(t *testing.T) {
 
-	f, err := os.OpenFile("log.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
+	var smapsAA SitemapsAA
+	var wg sync.WaitGroup
+
+	f, err := os.OpenFile("log.txt", os.O_CREATE|os.O_WRONLY, 0777)
 	check(err)
 	defer f.Close()
 
 	log.SetFlags(log.LstdFlags | log.Lmicroseconds)
 	log.SetOutput(f)
-
-	var smapsAA SitemapsAA
-	var wg sync.WaitGroup
 
 	data := getData("https://www.augsburger-allgemeine.de/sitemap.xml")
 
@@ -32,4 +32,20 @@ func TestCrawly(t *testing.T) {
 	log.Println("main: waiting for workers to finish...")
 	wg.Wait()
 	log.Println("main: completed")
+}
+*/
+
+func TestCrawlyNewsAA(t *testing.T){
+	// logging printed information to log.txt file
+	f, err := os.OpenFile("log.txt", os.O_CREATE|os.O_WRONLY, 0777)
+	check(err)
+	defer f.Close()
+
+	log.SetFlags(log.LstdFlags | log.Lmicroseconds)
+	log.SetOutput(f)
+
+	// function start
+	log.Println("crawl started")
+	CrawlURL("https://www.augsburger-allgemeine.de/news.xml")
+	log.Println("crawl finished")
 }
