@@ -11,6 +11,9 @@ import (
 	"sync"
 )
 
+var KEYWORDS = [...]string{"gewerbegebiet", "industriegebiet"}
+var URLAA = "https://www.augsburger-allgemeine.de/news.xml"
+
 // check for error message
 func check(err error) {
 	if err != nil {
@@ -19,7 +22,7 @@ func check(err error) {
 }
 
 // Gunzip unzip ziped data from byte array
-func gunzip(zipdata io.Reader) []byte {
+func gUnzip(zipdata io.Reader) []byte {
 	log.Println("unzipping data...")
 	zw, err := gzip.NewReader(zipdata)
 	check(err)
@@ -33,7 +36,6 @@ func gunzip(zipdata io.Reader) []byte {
 		log.Println("data unziped")
 		return unzipdata
 	}
-
 }
 
 // parseXML parse xml byte data into struct
@@ -57,7 +59,7 @@ func getData(url string) []byte {
 	// check for gzip data, unzip if needed
 	if strings.Contains(url, ".gz") {
 		log.Println("content encoded with gzip")
-		body = gunzip(resp.Body)
+		body = gUnzip(resp.Body)
 	} else {
 		log.Println("content not encoded")
 		body, err = ioutil.ReadAll(resp.Body)
@@ -68,7 +70,7 @@ func getData(url string) []byte {
 	return body
 }
 
-func checkKeywords(dest interface{}) {
+func filterKeywords(dest interface{}) {
 	log.Println("checking keywords...")
 
 	switch tsrc := dest.(type) {
@@ -79,7 +81,7 @@ func checkKeywords(dest interface{}) {
 		log.Println("type identified as NewsAA")
 
 		for _, n := range tsrc.News {
-			if strings.Contains(strings.ToLower(n.URL), "gewerbegebiet") {
+			if strings.Contains(strings.ToLower(n.URL), "usa") {
 				filterNews.News = append(filterNews.News, n)
 			}
 		}
@@ -95,6 +97,21 @@ func checkKeywords(dest interface{}) {
 	}
 }
 
+func Crawl(source string){
+	switch source{
+
+	case "augsburger":
+		var newsAA NewsAA
+		body := getData(URLAA)
+		parseXml(&body, &newsAA)
+		filterKeywords(&newsAA)
+
+		for _, n := range newsAA.News {
+			log.Println(n.Title)
+		}
+	}
+}
+
 func CrawlMultiURL(wg *sync.WaitGroup, url string) {
 	defer wg.Done()
 
@@ -102,21 +119,10 @@ func CrawlMultiURL(wg *sync.WaitGroup, url string) {
 
 	body := getData(url)
 	parseXml(&body, &augsburger)
-	checkKeywords(&augsburger)
+	filterKeywords(&augsburger)
 
-	for _, n := range augsburger.News{
+	for _, n := range augsburger.News {
 		log.Println(n.URL)
 	}
 }
 
-func CrawlURL(url string) {
-	var augsburger NewsAA
-
-	body := getData(url)
-	parseXml(&body, &augsburger)
-	checkKeywords(&augsburger)
-
-	for _, n := range augsburger.News{
-		log.Println(n.Title)
-	}
-}

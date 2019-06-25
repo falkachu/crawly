@@ -2,6 +2,7 @@ package crawly
 
 type NewsAA struct {
 	News []NewsEntryAA `xml:"url"`
+	URL string
 }
 
 type NewsEntryAA struct {

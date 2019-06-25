@@ -2,7 +2,6 @@ package crawly
 
 import (
 	"log"
-	"os"
 	"testing"
 )
 
@@ -37,15 +36,18 @@ func TestCrawly(t *testing.T) {
 
 func TestCrawlyNewsAA(t *testing.T){
 	// logging printed information to log.txt file
+
+	/*
 	f, err := os.OpenFile("log.txt", os.O_CREATE|os.O_WRONLY, 0777)
 	check(err)
 	defer f.Close()
 
-	log.SetFlags(log.LstdFlags | log.Lmicroseconds)
 	log.SetOutput(f)
+	 */
 
 	// function start
+	log.SetFlags(log.LstdFlags | log.Lmicroseconds)
 	log.Println("crawl started")
-	CrawlURL("https://www.augsburger-allgemeine.de/news.xml")
+	Crawl("augsburger")
 	log.Println("crawl finished")
 }
