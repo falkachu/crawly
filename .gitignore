@@ -16,3 +16,6 @@
 
 # XML Files
 *.xml
+
+# TXT Files
+*.txt
