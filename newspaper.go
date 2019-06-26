@@ -7,50 +7,55 @@ import (
 )
 
 type NewsCollection struct {
-	Index       string
+	Url         string
 	NewsEntries []NewsEntry `xml:"url"`
 }
 
 type NewsEntry struct {
-	URL     string `xml:"loc"`
+	Url     string `xml:"loc"`
 	Lastmod string `xml:"lastmod"`
 }
 
 type SitemapCollection struct {
-	Index    string
+	Url      string
 	Sitemaps []Sitemap `xml:"sitemap"`
 }
 
 type Sitemap struct {
-	URL     string `xml:"loc"`
+	Url     string `xml:"loc"`
 	Lastmod string `xml:"lastmod"`
 }
 
+// NewSitemapCollection constructor new SitemapCollection object
 func NewSitemapCollection(index string) SitemapCollection {
 	var smapscoll SitemapCollection
-	smapscoll.Index = index
+	smapscoll.Url = index
 	return smapscoll
 }
 
+// NewNewsCollection constructor new NewsCollection object
 func NewNewsCollection(index string) NewsCollection{
 	var newscoll NewsCollection
-	newscoll.Index = index
+	newscoll.Url = index
 	return newscoll
 }
 
-func (smpacoll *SitemapCollection) Crawl() {
+// Crawl crawl sitemap containing multiple sitemaps
+func (smapcoll *SitemapCollection) Crawl() {
 	// Vars
 	var wg sync.WaitGroup
 
-	// Crawling
-	data := getData(smpacoll.Index)
-	parseXml(&data, smpacoll)
+	// get sitemap data, parse xml to sitemap struct
+	data := getData(smapcoll.Url)
+	parseXml(&data, smapcoll)
 
-	for i := range smpacoll.Sitemaps {
-		log.Println(smpacoll.Sitemaps[i].URL)
+	// crawl all sitemap urls
+	for i := range smapcoll.Sitemaps {
+		log.Println(smapcoll.Sitemaps[i].Url)
 		log.Println("main: starting worker ", i)
 		wg.Add(1)
-		go crawlUrlSync(&wg, smpacoll.Sitemaps[i].URL)
+		newscoll := NewNewsCollection(smapcoll.Sitemaps[i].Url)
+		go newscoll.crawlSync(&wg)
 	}
 
 	log.Println("main: waiting for workers to finish...")
@@ -58,6 +63,7 @@ func (smpacoll *SitemapCollection) Crawl() {
 	log.Println("main: completed")
 }
 
+// filterKeywords filter crawled news
 func (news *NewsCollection) filterKeywords() {
 	log.Println("filtering keywords...")
 
@@ -65,7 +71,7 @@ func (news *NewsCollection) filterKeywords() {
 
 	for _, n := range news.NewsEntries {
 		for _, k := range KEYWORDS {
-			if strings.Contains(strings.ToLower(n.URL), k) {
+			if strings.Contains(strings.ToLower(n.Url), k) {
 				filterNews.NewsEntries = append(filterNews.NewsEntries, n)
 				break
 			}
@@ -79,14 +85,34 @@ func (news *NewsCollection) filterKeywords() {
 	news.NewsEntries = filterNews.NewsEntries
 }
 
+// Crawl crawl website with news entries
 func (news *NewsCollection) Crawl(){
-	log.Println("crawling " + news.Index)
+	log.Println("crawling " + news.Url)
 
-	body := getData(news.Index)
+	// get data, parse xml to news struct, filter news
+	body := getData(news.Url)
 	parseXml(&body, news)
 	news.filterKeywords()
 
+	// log crawled news
 	for _, n := range news.NewsEntries {
-		log.Println(n.URL)
+		log.Println(n.Url)
+	}
+}
+
+// crawlSync like NewsCollection.Crawl() but with Waitgroup for crawling multiple websites in parallel
+func (news *NewsCollection) crawlSync(wg *sync.WaitGroup){
+	defer wg.Done()
+
+	log.Println("crawling " + news.Url)
+
+	// get data from url, parse xml to news struct, filter news
+	body := getData(news.Url)
+	parseXml(&body, news)
+	news.filterKeywords()
+
+	// log crawled news
+	for _, n := range news.NewsEntries {
+		log.Println(n.Url)
 	}
 }

@@ -8,7 +8,6 @@ import (
 	"log"
 	"net/http"
 	"strings"
-	"sync"
 )
 
 var KEYWORDS = [...]string{"gewerbegebiet", "industriegebiet", "investition", "investiert"}
@@ -45,7 +44,7 @@ func parseXml(xmldata *[]byte, dest interface{}) {
 	log.Println("xml parsed")
 }
 
-// GetData from URL and return the byte array
+// getData get data from url and return the byte array
 func getData(url string) []byte {
 	log.Println("getting data from url...")
 
@@ -67,22 +66,6 @@ func getData(url string) []byte {
 
 	log.Println("data received")
 	return body
-}
-
-func crawlUrlSync(wg *sync.WaitGroup, url string) {
-	defer wg.Done()
-
-	log.Println("crawling " + url)
-
-	var news NewsCollection
-
-	body := getData(url)
-	parseXml(&body, &news)
-	news.filterKeywords()
-
-	for _, n := range news.NewsEntries {
-		log.Println(n.URL)
-	}
 }
 
 
