@@ -1,0 +1,9 @@
+2019/06/26 10:46:59.875758 crawling https://www.augsburger-allgemeine.de/news.xml
+2019/06/26 10:46:59.875758 getting data from url...
+2019/06/26 10:46:59.974497 content not encoded
+2019/06/26 10:47:00.013869 data received
+2019/06/26 10:47:00.013869 parsing xml...
+2019/06/26 10:47:00.042985 xml parsed
+2019/06/26 10:47:00.042985 filtering keywords...
+2019/06/26 10:47:00.045021 https://www.augsburger-allgemeine.de/krumbach/Sportzentrum-Vor-Neubau-sind-Rieseninvestitionen-noetig-id54686356.html
+2019/06/26 10:47:00.045021 https://www.augsburger-allgemeine.de/landsberg/Fuchstal-An-der-B17-soll-ein-neues-Gewerbegebiet-entstehen-id54673731.html

@@ -2,52 +2,43 @@ package crawly
 
 import (
 	"log"
+	"os"
 	"testing"
 )
 
-/*
-func TestCrawly(t *testing.T) {
+func TestCrawlMulti(t *testing.T) {
 
-	var smapsAA SitemapsAA
-	var wg sync.WaitGroup
+	// Vars
+	smaps := NewSitemaps("https://www.all-in.de/sitemap.xml")
 
+
+	// Logger Configuration
 	f, err := os.OpenFile("log.txt", os.O_CREATE|os.O_WRONLY, 0777)
 	check(err)
 	defer f.Close()
 
+	// Logger Options
 	log.SetFlags(log.LstdFlags | log.Lmicroseconds)
 	log.SetOutput(f)
 
-	data := getData("https://www.augsburger-allgemeine.de/sitemap.xml")
 
-	parseXml(&data, &smapsAA)
-
-	for i, s := range smapsAA.Sitemaps{
-		log.Println("main: starting worker ", i)
-		wg.Add(1)
-		go CrawlURL(&wg, s.URL)
-	}
-
-	log.Println("main: waiting for workers to finish...")
-	wg.Wait()
-	log.Println("main: completed")
+	// Crawling
+	smaps.Crawl()
 }
-*/
 
-func TestCrawlyNewsAA(t *testing.T){
-	// logging printed information to log.txt file
+func TestCrawlUrl(t *testing.T) {
+	// Vars
+	url := "https://www.augsburger-allgemeine.de/news.xml"
 
-	/*
-	f, err := os.OpenFile("log.txt", os.O_CREATE|os.O_WRONLY, 0777)
+	// Logger Configuration
+	f, err := os.OpenFile("log2.txt", os.O_CREATE|os.O_WRONLY, 0777)
 	check(err)
 	defer f.Close()
 
-	log.SetOutput(f)
-	 */
-
-	// function start
+	// Logger Options
 	log.SetFlags(log.LstdFlags | log.Lmicroseconds)
-	log.Println("crawl started")
-	Crawl("augsburger")
-	log.Println("crawl finished")
+	log.SetOutput(f)
+
+	// Crawling
+	CrawlUrl(url)
 }
