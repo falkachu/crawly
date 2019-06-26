@@ -19,7 +19,7 @@ func check(err error) {
 	}
 }
 
-// Gunzip unzip ziped data from byte array
+// Gunzip unzip data from byte array
 func gUnzip(zipdata io.Reader) []byte {
 	log.Println("unzipping data...")
 	zw, err := gzip.NewReader(zipdata)
