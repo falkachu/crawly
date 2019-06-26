@@ -1,0 +1,276 @@
+2019/06/26 10:46:59.549582 getting data from url...
+2019/06/26 10:46:59.873764 content not encoded
+2019/06/26 10:46:59.873764 data received
+2019/06/26 10:46:59.873764 parsing xml...
+2019/06/26 10:46:59.873764 unknown type *crawly.Sitemaps
+2019/06/26 10:46:59.873764 xml parsed
+2019/06/26 10:46:59.873764 main: waiting for workers to finish...
+2019/06/26 10:46:59.873764 main: completed
+l-in.de/sitemap_article0002.xml
+2019/06/26 10:27:00.016501 main: starting worker  1
+2019/06/26 10:27:00.016501 https://www.all-in.de/sitemap_article0003.xml
+2019/06/26 10:27:00.016501 main: starting worker  2
+2019/06/26 10:27:00.016501 https://www.all-in.de/sitemap_article0004.xml
+2019/06/26 10:27:00.016501 main: starting worker  3
+2019/06/26 10:27:00.016501 https://www.all-in.de/sitemap_article0005.xml
+2019/06/26 10:27:00.016501 main: starting worker  4
+2019/06/26 10:27:00.016501 https://www.all-in.de/sitemap_articlecat0001.xml
+2019/06/26 10:27:00.016501 main: starting worker  5
+2019/06/26 10:27:00.016501 https://www.all-in.de/sitemap_articleindex0001.xml
+2019/06/26 10:27:00.016501 main: starting worker  6
+2019/06/26 10:27:00.016501 crawling https://www.all-in.de/sitemap_article0002.xml
+2019/06/26 10:27:00.016501 getting data from url...
+2019/06/26 10:27:00.016501 https://www.all-in.de/sitemap_articletag0001.xml
+2019/06/26 10:27:00.016501 main: starting worker  7
+2019/06/26 10:27:00.016501 https://www.all-in.de/sitemap_user0001.xml
+2019/06/26 10:27:00.016501 main: starting worker  8
+2019/06/26 10:27:00.016501 main: waiting for workers to finish...
+2019/06/26 10:27:00.016501 crawling https://www.all-in.de/sitemap_articletag0001.xml
+2019/06/26 10:27:00.016501 getting data from url...
+2019/06/26 10:27:00.016501 crawling https://www.all-in.de/sitemap_article0003.xml
+2019/06/26 10:27:00.016501 getting data from url...
+2019/06/26 10:27:00.016501 crawling https://www.all-in.de/sitemap_articleindex0001.xml
+2019/06/26 10:27:00.016501 getting data from url...
+2019/06/26 10:27:00.016501 crawling https://www.all-in.de/sitemap_article0004.xml
+2019/06/26 10:27:00.017500 getting data from url...
+2019/06/26 10:27:00.016501 crawling https://www.all-in.de/sitemap_article0005.xml
+2019/06/26 10:27:00.017500 getting data from url...
+2019/06/26 10:27:00.016501 crawling https://www.all-in.de/sitemap_articlecat0001.xml
+2019/06/26 10:27:00.017500 getting data from url...
+2019/06/26 10:27:00.016501 crawling https://www.all-in.de/sitemap_article0001.xml
+2019/06/26 10:27:00.017500 getting data from url...
+2019/06/26 10:27:00.016501 crawling https://www.all-in.de/sitemap_user0001.xml
+2019/06/26 10:27:00.017500 getting data from url...
+2019/06/26 10:27:00.045692 content not encoded
+2019/06/26 10:27:00.441983 content not encoded
+2019/06/26 10:27:00.442977 content not encoded
+2019/06/26 10:27:00.442977 content not encoded
+2019/06/26 10:27:00.442977 content not encoded
+2019/06/26 10:27:00.442977 content not encoded
+2019/06/26 10:27:00.442977 content not encoded
+2019/06/26 10:27:00.442977 content not encoded
+2019/06/26 10:27:00.442977 content not encoded
+2019/06/26 10:27:00.445970 data received
+2019/06/26 10:27:00.445970 parsing xml...
+2019/06/26 10:27:00.454945 data received
+2019/06/26 10:27:00.454945 parsing xml...
+2019/06/26 10:27:00.478883 data received
+2019/06/26 10:27:00.478883 parsing xml...
+2019/06/26 10:27:00.480876 xml parsed
+2019/06/26 10:27:00.480876 filtering keywords...
+2019/06/26 10:27:00.480876 no elements found
+2019/06/26 10:27:00.485862 xml parsed
+2019/06/26 10:27:00.485862 filtering keywords...
+2019/06/26 10:27:00.486891 https://www.all-in.de/tag/gewerbegebiet
+2019/06/26 10:27:00.486891 https://www.all-in.de/tag/gewerbegebiet-leubas-s%C3%BCd
+2019/06/26 10:27:00.536726 data received
+2019/06/26 10:27:00.536726 parsing xml...
+2019/06/26 10:27:00.548700 xml parsed
+2019/06/26 10:27:00.548700 filtering keywords...
+2019/06/26 10:27:00.549697 no elements found
+2019/06/26 10:27:00.561660 data received
+2019/06/26 10:27:00.561660 parsing xml...
+2019/06/26 10:27:00.567679 xml parsed
+2019/06/26 10:27:00.567679 filtering keywords...
+2019/06/26 10:27:00.567679 no elements found
+2019/06/26 10:27:00.810992 xml parsed
+2019/06/26 10:27:00.810992 filtering keywords...
+2019/06/26 10:27:00.823996 https://www.all-in.de/memmingen/c-lokales/grobe-planung-fuer-gewerbegebiet-in-memmingerberg-steht_a1596011
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/naturschutzbund-lehnt-gewerbegebiet-ab_a160205
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/waltenhofen-bringt-neues-gewerbegebiet-auf-den-weg_a161235
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/betzigaus-gewerbegebiet_a162082
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/stromausfall-im-gewerbegebiet-ursulasried-bagger-war-schuld_a1641180
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/gewerbegebiet-als-hochwasserflaeche_a165303
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/stiftsbleiche-soll-gewerbegebiet-werden_a165812
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/firmen-erweiterung-laesst-gewerbegebiet-wachsen_a166747
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/stadt-memmingen-will-gewerbegebiet-im-norden-erweitern_a1675216
+2019/06/26 10:27:00.823996 https://www.all-in.de/kaufbeuren/c-lokales/gestratzer-buerger-sollen-ueber-interkommunales-gewerbegebiet-abstimmen_a1691817
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/volksfestplatz-als-gewerbegebiet_a170012
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/anlieger-wollen-gewerbegebiet-vor-gericht-kippen_a173875
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/mit-gewerbegebiet-waechst-auch-ein-biotop_a177272
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/gewerbegebiete-bei-jengen-auf-eis-gelegt_a179907
+2019/06/26 10:27:00.823996 https://www.all-in.de/fuessen/c-lokales/erneute-debatte-ueber-die-kuenftige-strassenfuehrung-im-alten-fuessener-gewerbegebiet_a1825211
+2019/06/26 10:27:00.823996 https://www.all-in.de/kaufbeuren/c-allgaeu/interkommunales-gewerbegebiet-zwischen-gestratz-und-argenthal-sorgt-fuer-diskussionen_a1853302
+2019/06/26 10:27:00.823996 https://www.all-in.de/lindenberg-im-allgaeu/c-lokales/im-gewerbegebiet-eglofstal-steht-das-herzstueck-wieder-zum-verkauf_a1884463
+2019/06/26 10:27:00.823996 https://www.all-in.de/marktoberdorf/c-lokales/stadtrat-will-schnelleres-internet-fuer-marktoberdorfer-gewerbegebiet_a1884549
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/fast-alles-klar-fuer-das-neue-gewerbegebiet-auf-dem-buehl_a188543
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/verwaltungsgerichtshof-genehmigung-fuer-asylbewerberheim-in-memminger-gewerbegebiet-rechtswidrig_a1897916
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/ja-zu-gewerbegebiet-im-norden_a190039
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/regenwasser-kanal-im-gewerbegebiet-ist-marode_a190773
+2019/06/26 10:27:00.823996 https://www.all-in.de/kaufbeuren/c-lokales/gemeinderat-kaltental-beschliesst-erschliessung-zweier-gewerbegebiete_a1910573
+2019/06/26 10:27:00.823996 https://www.all-in.de/kaufbeuren/c-lokales/steht-der-zweckverband-interkommunales-gewerbegebiet-argental-vor-dem-aus_a1911296
+2019/06/26 10:27:00.823996 https://www.all-in.de/marktoberdorf/c-lokales/spatenstich-in-stoetten-gewerbegebiet-wird-erweitert_a1911341
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/kritische-stimmen-zum-geplanten-gewerbegebiet_a192739
+2019/06/26 10:27:00.823996 https://www.all-in.de/kaufbeuren/c-lokales/gruene-behaupten-interkommunales-gewerbegebiet-argental-ist-nicht-genehmigungsfaehig_a1932086
+2019/06/26 10:27:00.823996 https://www.all-in.de/kaufbeuren/c-allgaeu/neues-gewerbegebiet-wertachauen-bei-pforzen-kommt-bei-heimischer-wirtschaft-gut-an_a1933708
+2019/06/26 10:27:00.823996 https://www.all-in.de/kempten/c-lokales/kein-verkauf-ohne-produktion-im-gewerbegebiet_a194366
+2019/06/26 10:27:00.823996 https://www.all-in.de/fuessen/c-lokales/verwaltungspanne-bremst-neue-planung-fuer-fuessener-gewerbegebiet-vorerst-aus_a1964647
+2019/06/26 10:27:01.132237 data received
+2019/06/26 10:27:01.132237 parsing xml...
+2019/06/26 10:27:01.266877 data received
+2019/06/26 10:27:01.266877 parsing xml...
+2019/06/26 10:27:01.390548 xml parsed
+2019/06/26 10:27:01.391545 filtering keywords...
+2019/06/26 10:27:01.401517 https://www.all-in.de/immenstadt-i-allgaeu/c-lokales/buergerinitiative-seifener-illertal-wehrt-sich-gegen-geplantes-gewerbegebiet_a5035212
+2019/06/26 10:27:01.401517 https://www.all-in.de/kempten/c-lokales/bestatter-darf-im-gewerbegebiet-pferde-halten_a779827
+2019/06/26 10:27:01.401517 https://www.all-in.de/kempten/c-lokales/schnelles-internet-fuer-gewerbegebiete_a825977
+2019/06/26 10:27:01.401517 https://www.all-in.de/kempten/c-lokales/erstes-gewerbegebiet-einer-neuen-generation_a827476
+2019/06/26 10:27:01.401517 https://www.all-in.de/kempten/c-lokales/gewerbegebiet-im-mittelpunkt_a837825
+2019/06/26 10:27:01.401517 https://www.all-in.de/kempten/c-lokales/nein-zu-spielhallen-im-gewerbegebiet_a862646
+2019/06/26 10:27:01.401517 https://www.all-in.de/altusried/c-lokales/endausbau-von-gewerbegebiet-in-thal-beschlossen_a908165
+2019/06/26 10:27:01.401517 https://www.all-in.de/kempten/c-lokales/ehemaliges-brauereigelaende-wohn-und-gewerbegebiet-geplant_a912470
+2019/06/26 10:27:01.401517 https://www.all-in.de/immenstadt-i-allgaeu/c-lokales/gewerbegebiete-gemeinsam-vermarkten_a932565
+2019/06/26 10:27:01.401517 https://www.all-in.de/buchloe/c-lokales/mit-dem-quad-ueber-den-acker-zweite-rallye-im-buchloer-gewerbegebiet_a933214
+2019/06/26 10:27:01.401517 https://www.all-in.de/buchloe/c-lokales/zwischen-sieben-kommunen-soll-ein-interkommunales-gewerbegebiet-entstehen_a938672
+2019/06/26 10:27:01.401517 https://www.all-in.de/mindelheim/c-lokales/buergerbegehren-gegen-gluecksspiel-in-gewerbegebiet-erkheim_a954001
+2019/06/26 10:27:01.401517 https://www.all-in.de/fuessen/c-lokales/kranverleih-macht-den-anfang-im-gewerbegebiet_a956565
+2019/06/26 10:27:01.401517 https://www.all-in.de/kempten/c-lokales/ein-gewerbegebiet-wird-kleiner-ein-neues-kommt-hinzu_a959015
+2019/06/26 10:27:01.401517 https://www.all-in.de/mindelheim/c-lokales/gluecksspiel-im-gewerbegebiet-erkheimer-raete-machen-weg-fuer-buergerentscheid-frei_a962928
+2019/06/26 10:27:01.401517 https://www.all-in.de/mindelheim/c-lokales/erkheimer-rat-laesst-begehren-von-initiative-gegen-gluecksspiel-in-gewerbegebiet-zu_a963040
+2019/06/26 10:27:01.401517 https://www.all-in.de/kempten/c-lokales/mobilfunk-sendestation-im-gewerbegebiet-ursulasried-wird-ausgebaut_a995373
+2019/06/26 10:27:01.405509 data received
+2019/06/26 10:27:01.405509 parsing xml...
+2019/06/26 10:27:01.411492 data received
+2019/06/26 10:27:01.411492 parsing xml...
+2019/06/26 10:27:01.678810 xml parsed
+2019/06/26 10:27:01.678810 filtering keywords...
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/auch-ein-gewerbegebiet-braucht-gestaltung_a289142
+2019/06/26 10:27:01.693770 https://www.all-in.de/c-lokales/gewerbeschau-im-gewerbegebiet-wigglis-in-roethenbach_a3000718
+2019/06/26 10:27:01.693770 https://www.all-in.de/c-lokales/feuerwehruebung-im-gewerbegebiet-hegge_a3002255
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/baurecht-fuer-neues-gewerbegebiet_a305595
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/unterthingau-plant-riesiges-gewerbegebiet_a323311
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/gemeinderat-gegen-gemeinsames-gewerbegebiet_a326508
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/raete-stimmen-fuer-gewerbegebiet_a344407
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/gewerbegebiet-fuellt-sich-weiter_a355215
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/hergatz-erweitert-gewerbegebiet_a367774
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/zwei-gemeinden-teilen-sich-ein-gewerbegebiet_a369096
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/kiesabbau-initiative-gegen-geplantes-gewerbegebiet_a492316
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/weiterer-schritt-zum-gewerbegebiet_a499090
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/zufahrt-zu-gewerbegebiet-kostet-700000-euro_a499123
+2019/06/26 10:27:01.693770 https://www.all-in.de/kaufbeuren/c-allgaeu/traditionsunternehmen-erster-bauherr-im-neuen-kaufbeurer-gewerbegebiet_a5001743
+2019/06/26 10:27:01.693770 https://www.all-in.de/kaufbeuren/c-polizei/fuer-fahrpruefung-geuebt-autofahrer-18-ohne-fuehrerschein-in-kaufbeurer-gewerbegebiet-kontrolliert_a5002079
+2019/06/26 10:27:01.693770 https://www.all-in.de/memmingen/c-lokales/ottobeuren-weist-neues-gewerbegebiet-aus_a5003429
+2019/06/26 10:27:01.693770 https://www.all-in.de/lindenberg-im-allgaeu/c-lokales/kritik-am-interkommunalen-gewerbegebiet-im-argental-bei-gruenenbach_a5005455
+2019/06/26 10:27:01.693770 https://www.all-in.de/kempten/c-lokales/ein-krematorium-im-gewerbegebiet-kempten-darf-man-das-bauen_a5008386
+2019/06/26 10:27:01.693770 https://www.all-in.de/kaufbeuren/c-allgaeu/unternehmen-im-kaufbeurer-gewerbegebiet-stinkts-gewaltig_a5008665
+2019/06/26 10:27:01.693770 https://www.all-in.de/gestratz/c-lokales/gewerbegebiet-zwischen-gestratz-und-gruenenbach-regierung-staerkt-zweckverband_a5009616
+2019/06/26 10:27:01.693770 https://www.all-in.de/memmingen/c-lokales/aerztehaus-im-legauer-gewerbegebiet-geplant_a5014488
+2019/06/26 10:27:01.693770 https://www.all-in.de/holzguenz/c-lokales/zweckverband-will-gemeinsames-gewerbegebiet-an-a96-bei-holzguenz-voranbringen_a5018451
+2019/06/26 10:27:01.693770 https://www.all-in.de/immenstadt-i-allgaeu/c-lokales/zwoelf-hektar-fuer-ein-neues-gewerbegebiet-in-immenstadt_a5026410
+2019/06/26 10:27:01.693770 https://www.all-in.de/kaufbeuren/c-lokales/gewerbegebiete-in-kaufbeuren-neue-hotels-und-unternehmensgebaeude_a5027364
+2019/06/26 10:27:01.694767 https://www.all-in.de/memmingen/c-lokales/gewerbegebiet-nord-stadt-memmingen-stellt-dixi-toiletten-auf_a5030475
+2019/06/26 10:27:01.694767 https://www.all-in.de/kaufbeuren/c-lokales/handwerkerhof-statt-moschee-stadt-kaufbeuren-plant-gewerbegebiet-in-der-unteren-au_a5030619
+2019/06/26 10:27:01.694767 https://www.all-in.de/hergensweiler/c-lokales/rekordhaushalt-in-hergensweiler-investitionen-in-bahnuebergaenge-bau-und-gewerbegebiete_a5031651
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/aus-gruenen-wiesen-wird-ein-gewerbegebiet_a504794
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/weichen-fuer-gewerbegebiet-beim-airport-gestellt_a506009
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/auf-dem-buehl-soll-neues-gewerbegebiet-entstehen_a591249
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/viel-geld-fuer-neues-gewerbegebiet_a613066
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/gewerbegebiet-waechst-weiter_a632773
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/neue-strasse-fuehrt-direkt-ins-gewerbegebiet_a645403
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/neues-flugblatt-wirbt-fuer-gewerbegebiet_a650036
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/gewerbegebiet-auf-der-zielgeraden_a658721
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/erweiterung-des-gewerbegebiets_a658865
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/kein-fitness-studio-in-kemptener-gewerbegebiet_a685366
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/pferdestall-soll-aus-gewerbegebiet-raus_a698876
+2019/06/26 10:27:01.694767 https://www.all-in.de/kempten/c-lokales/gewerbegebiet-sued-soll-wachsen_a702498
+2019/06/26 10:27:01.820431 xml parsed
+2019/06/26 10:27:01.820431 filtering keywords...
+2019/06/26 10:27:01.832404 xml parsed
+2019/06/26 10:27:01.832404 filtering keywords...
+2019/06/26 10:27:01.836390 https://www.all-in.de/fuessen/c-lokales/fuessener-stadtrat-plant-neue-strasse-im-gewerbegebiet-west_a2002728
+2019/06/26 10:27:01.836390 https://www.all-in.de/kaufbeuren/c-lokales/gewerbegebiet-argental-zweckverband-bekommt-neuen-rueckenwind-gruene-geben-kampf-nicht-auf_a2007167
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/ab-heute-sperrungen-im-gewerbegebiet_a200797
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/gewerbegebiet-plaene-schreiten-voran_a201584
+2019/06/26 10:27:01.836390 https://www.all-in.de/kaufbeuren/c-lokales/diskussion-ums-gewerbegebiet-in-gruenenbach-buergermeistern-platzt-der-kragen_a2025026
+2019/06/26 10:27:01.836390 https://www.all-in.de/memmingen/c-lokales/vorerst-kein-motel-im-westerheimer-gewerbegebiet_a2026899
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/gemeinde-kauft-grund-fuer-gewerbegebiet_a204332
+2019/06/26 10:27:01.836390 https://www.all-in.de/kaufbeuren/c-lokales/steinkrebs-steht-dem-gewerbegebiet-im-argental-im-weg_a2058617
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/kein-gewerbegebiet-in-naehe-der-wohnbebauung_a207448
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/tuerkheim-will-ein-groesseres-gewerbegebiet_a208711
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/reifendiebstahl-in-kempten-spezialisierte-banden-schlagen-immer-wieder-nachts-in-gewerbegebieten-zu_a2093916
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/fuenf-gemeinden-ein-gewerbegebiet_a210405
+2019/06/26 10:27:01.836390 https://www.all-in.de/kaufbeuren/c-lokales/gewerbegebiet-argental-bund-naturschutz-kaempft-weiterhin-fuer-die-flaechen-in-der-au_a2116342
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/investor-kauft-ganzes-gewerbegebiet_a211784
+2019/06/26 10:27:01.836390 https://www.all-in.de/fuessen/c-lokales/neues-wohn-und-neues-gewerbegebiet-in-rosshaupten-kommen-voran_a2122291
+2019/06/26 10:27:01.836390 https://www.all-in.de/oberstdorf/c-lokales/noch-kein-zeitplan-fuer-neues-gewerbegebiet-in-oberstdorf_a2128108
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/naturschuetzer-kritisieren-hergatzer-gewerbegebiet_a213880
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/gewerbegebiet-linden-einen-schritt-weiter_a214583
+2019/06/26 10:27:01.836390 https://www.all-in.de/memmingen/c-lokales/erschliessung-von-gewerbegebiet-in-heimertingen-kommt-voran_a2169643
+2019/06/26 10:27:01.836390 https://www.all-in.de/marktoberdorf/c-lokales/gewerbegebiet-in-marktoberdorf-bekommt-breitband-internet_a2169673
+2019/06/26 10:27:01.836390 https://www.all-in.de/kaufbeuren/c-lokales/neuer-wohnraum-fuer-neugablonz-bauvoranfrage-fuer-flaeche-beim-gewerbegebiet-sanitaetsdepot-findet-zustimmung_a2170476
+2019/06/26 10:27:01.836390 https://www.all-in.de/memmingen/c-allgaeu/gewerbegebiet-am-memminger-autobahnkreuz-waechst-weiter_a2173571
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-allgaeu/gemeinde-egg-schafft-ein-gewerbegebiet-auf-vorrat_a2176800
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/neues-gewerbegebiet-schrumpft-um-die-haelfte_a217915
+2019/06/26 10:27:01.836390 https://www.all-in.de/buchloe/c-lokales/stadtrat-diskutiert-ueber-erweiterung-des-buchloer-gewerbegebietes_a2181360
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/plaene-fuer-grosskino-in-gewerbegebiet_a218485
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/neues-gewerbegebiet-und-vierspurige-b-19_a219259
+2019/06/26 10:27:01.836390 https://www.all-in.de/fuessen/c-lokales/nach-jahrelanger-planung-jetzt-steht-konzept-fuer-verkehrserschliessung-des-fuessener-gewerbegebietes_a2199224
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/eine-bruecke-zwischen-den-gewerbegebieten_a221543
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-allgaeu/neues-gewerbegebiet-nimmt-formen-an_a222831
+2019/06/26 10:27:01.836390 https://www.all-in.de/altusried/c-polizei/mehrere-tausend-euro-erbeutet-einbruchserie-im-wiggensbacher-gewerbegebiet-am-muehlbach_a2246202
+2019/06/26 10:27:01.836390 https://www.all-in.de/rettenbach-am-auerberg/c-polizei/vier-einbrueche-im-gewerbegebiet-in-rettenbach-am-auerberg-mindestens-10000-euro-sachschaden_a2251980
+2019/06/26 10:27:01.836390 https://www.all-in.de/fuessen/c-lokales/an-neuem-bebauungsplan-im-fuessener-gewerbegebiet-scheiden-sich-die-geister_a2309160
+2019/06/26 10:27:01.836390 https://www.all-in.de/kaufbeuren/c-lokales/argentalgemeinden-halten-an-gewerbegebiet-fest_a2354740
+2019/06/26 10:27:01.836390 https://www.all-in.de/fuessen/c-lokales/stadt-fuessen-kommt-nicht-voran-bei-besserer-verkehrserschliessung-fuer-gewerbegebiet_a2355083
+2019/06/26 10:27:01.836390 https://www.all-in.de/memmingen/c-allgaeu/bauhaus-oeffnet-drive-in-arena-im-gewerbegebiet-memmingen_a2364214
+2019/06/26 10:27:01.836390 https://www.all-in.de/lindenberg-im-allgaeu/c-polizei/toedlicher-unfall-auf-der-b308-auf-hoehe-des-gewerbegebiets-lindenberg_a2369172
+2019/06/26 10:27:01.836390 https://www.all-in.de/kaufbeuren/c-lokales/bis-zur-aenderung-des-landesentwicklungsprogramms-tut-sich-um-das-gewerbegebiet-im-argental-in-roethenbach-wenig_a2389107
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-allgaeu/weiterer-rueckschlag-fuer-neues-gewerbegebiet-in-kempten_a2425656
+2019/06/26 10:27:01.836390 https://www.all-in.de/kaufbeuren/c-allgaeu/tuerkisch-islamischer-verein-kaufbeuren-plant-moschee-in-gewerbegebiet_a2427329
+2019/06/26 10:27:01.836390 https://www.all-in.de/buchloe/c-lokales/gewerbegebiet-im-norden-von-buchloe-wird-erweitert_a2453620
+2019/06/26 10:27:01.836390 https://www.all-in.de/buchloe/c-allgaeu/buchloer-stadtrat-beschliesst-die-erweiterung-des-gewerbegebietes_a2474960
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/neues-gewerbegebiet-in-leubas-wie-fliesst-kuenftig-der-verkehr_a2510966
+2019/06/26 10:27:01.836390 https://www.all-in.de/altusried/c-allgaeu/im-gewerbegebiet-bad-groenenbach-entsteht-ein-hotel_a2513191
+2019/06/26 10:27:01.836390 https://www.all-in.de/kaufbeuren/c-lokales/gewerbegebiet-argental-zweckverband-treibt-vorhaben-voran_a2555980
+2019/06/26 10:27:01.836390 https://www.all-in.de/kempten/c-lokales/neues-gewerbegebiet-ohne-hochwassergefahr_a277345
+2019/06/26 10:27:01.848360 https://www.all-in.de/kaufbeuren/c-lokales/neues-kaeserei-gewerbegebiet-fuer-anliegeranwalt-nur-gefaelligkeitsplanung_a1008192
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/ob-mahnt-anbindung-des-gemeindlichen-gewerbegebiets-an-helfrich-weist-kritik-zurueck_a103486
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/nachmittagsbetreuung-im-test-gewerbegebiet-wird-konkret_a103779
+2019/06/26 10:27:01.848360 https://www.all-in.de/immenstadt-i-allgaeu/c-lokales/bedenken-des-landratsamts-zu-erweiterungswunsch-des-gewerbegebiets-in-herzmanns-werden-nicht-geteilt_a1045159
+2019/06/26 10:27:01.848360 https://www.all-in.de/memmingen/c-lokales/gewerbegebiet-memmingerberg-geh-und-radweg-muss-weichen_a1050434
+2019/06/26 10:27:01.848360 https://www.all-in.de/marktoberdorf/c-lokales/kein-einzelhandel-in-gewerbegebieten-von-marktoberdorf_a1062553
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/standort-2012-gewerbegebiete-in-kempten-und-umgebung_a1081559
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/ziel-gemeinsame-gewerbegebiete-fuer-sonthofen-und-umgebung_a1081799
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/amberg-beteiligt-sich-mit-elf-bis-15-prozent-am-interkommunalen-gewerbegebiet_a1085247
+2019/06/26 10:27:01.848360 https://www.all-in.de/buchloe/c-lokales/reaktionen-auf-den-ausstieg-wiedergeltingens-aus-dem-gemeinschaftsprojekt-interkommunales-gewerbegebiet_a1086703
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-allgaeu/mehrere-interessenten-fuer-kaufbeurer-gewerbegebiet_a108773
+2019/06/26 10:27:01.848360 https://www.all-in.de/immenstadt-i-allgaeu/c-lokales/hitzige-diskussionen-um-moegliches-gewerbegebiet-in-sonthofen_a1092445
+2019/06/26 10:27:01.848360 https://www.all-in.de/immenstadt-i-allgaeu/c-lokales/gewerbegebiet-statt-naherholung-diskussionen-um-moegliche-abholzung-des-tannachwaeldchens_a1101070
+2019/06/26 10:27:01.848360 https://www.all-in.de/fuessen/c-lokales/gruenes-licht-fuer-autohaus-heuberger-im-fuessener-gewerbegebiet_a1101128
+2019/06/26 10:27:01.848360 https://www.all-in.de/buchloe/c-lokales/amberg-stockt-fuer-das-gewerbegebiet-an-der-a-96-auf_a1103020
+2019/06/26 10:27:01.848360 https://www.all-in.de/buchloe/c-lokales/streit-um-gewerbegebiet-und-hochwasser-zwischen-wiedergeltingen-und-amberg_a1106115
+2019/06/26 10:27:01.848360 https://www.all-in.de/lindenberg-im-allgaeu/c-lokales/betreuung-und-gewerbegebiet-sind-die-themen-im-haushaltsausschuss-in-weiler_a1107137
+2019/06/26 10:27:01.848360 https://www.all-in.de/bad-woerishofen/c-lokales/bad-woerishofen-beraet-zum-interkommunalen-gewerbegebiet_a1108577
+2019/06/26 10:27:01.848360 https://www.all-in.de/lindenberg-im-allgaeu/c-lokales/bund-naturschutz-spricht-sich-gegen-gewerbegebiet-hammermuehle-in-weiler-simmerberg-aus_a1120348
+2019/06/26 10:27:01.848360 https://www.all-in.de/lindenberg-im-allgaeu/c-lokales/nachbesserungen-fuer-neues-gewerbegebiet-in-oberreute_a1149585
+2019/06/26 10:27:01.848360 https://www.all-in.de/fuessen/c-lokales/gewerbegebiet-schoene-kurzzeit-lagerplatz-fuer-bauschutt-in-rosshaupten_a1170448
+2019/06/26 10:27:01.848360 https://www.all-in.de/altusried/c-lokales/gemeinderat-wiggensbach-sagt-ja-zu-neuem-gewerbegebiet_a1171711
+2019/06/26 10:27:01.848360 https://www.all-in.de/buchloe/c-lokales/tuerkheim-will-das-gewerbegebiet-irsingen-unterfeld-um-16-hektar-erweitern_a1183754
+2019/06/26 10:27:01.848360 https://www.all-in.de/memmingen/c-lokales/neues-gewerbegebiet-in-weinried_a1188599
+2019/06/26 10:27:01.848360 https://www.all-in.de/kaufbeuren/c-lokales/gemeinderat-pforzen-billigt-verbesserten-neubau-des-bwz-neue-plaene-fuer-gewerbegebiet_a1209274
+2019/06/26 10:27:01.848360 https://www.all-in.de/buchloe/c-lokales/waaler-befassen-sich-mit-bebauungsplan-fuer-das-gewerbegebiet_a1223074
+2019/06/26 10:27:01.848360 https://www.all-in.de/fuessen/c-lokales/verfahren-fuer-neues-rosshauptener-gewerbegebiet-eingeleitet_a1225343
+2019/06/26 10:27:01.848360 https://www.all-in.de/fuessen/c-lokales/tierschuetzer-gegen-neues-gewerbegebiet-in-rosshaupten_a1236131
+2019/06/26 10:27:01.848360 https://www.all-in.de/buchloe/c-lokales/tuerkheim-stellt-weichen-fuer-erweiterung-des-gewerbegebietes-unterfeld-an-der-a-96_a1241142
+2019/06/26 10:27:01.848360 https://www.all-in.de/immenstadt-i-allgaeu/c-lokales/trotz-buergerprotest-sonthofen-plant-gewerbegebiet-am-frueheren-schiessplatz_a1303268
+2019/06/26 10:27:01.848360 https://www.all-in.de/lindenberg-im-allgaeu/c-lokales/diebe-schlagen-im-gewerbegebiet-scheidegg-lindenberg-zu_a1318173
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/stadt-memmingen-will-gewerbegebiet-vergroessern_a1343207
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/schnelles-internet-fuer-gewerbegebiet-ost-in-kaufbeuren_a1373591
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/porsche-zentrum-entsteht-im-kemptener-gewerbegebiet-buehl-ost_a1376862
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/memminger-stadtrat-will-gewerbegebiet-winkelaecker-ost-vorantreiben_a1379394
+2019/06/26 10:27:01.848360 https://www.all-in.de/buchloe/c-lokales/die-post-zieht-ins-buchloer-gewerbegebiet_a1422577
+2019/06/26 10:27:01.848360 https://www.all-in.de/kaufbeuren/c-lokales/zweites-interkommunales-gewerbegebiet-im-argental-bei-roethenbach-kann-kommen_a1451180
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/neues-gewerbegebiet-fuer-kaufbeuren_a1474271
+2019/06/26 10:27:01.848360 https://www.all-in.de/memmingen/c-lokales/gewerbegebiet-in-egg-sorgt-fuer-diskussionen_a1480348
+2019/06/26 10:27:01.848360 https://www.all-in.de/kaufbeuren/c-lokales/diskussion-ueber-das-gewerbegebiet-argental-in-gestratz_a1507404
+2019/06/26 10:27:01.848360 https://www.all-in.de/kaufbeuren/c-lokales/gestratzer-buerger-diskutieren-mit-buergermeister-ueber-geplantes-gewerbegebiet_a1547729
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-allgaeu/gewerbegebiet-memmingerberg-gemeinderat-beschliesst-nutzungsarten_a1549555
+2019/06/26 10:27:01.848360 https://www.all-in.de/memmingen/c-lokales/erneuerbare-energie-in-memmingerberger-gewerbegebiet_a1553978
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/gewerbegebiet-an-der-breite-bewaeltigt-weitere-planungshuerde_a155577
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/ffh-ohne-stiglberg-und-gewerbegebiet_a155776
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/parkplatz-reserven-im-gewerbegebiet_a156000
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/pinswang-sieht-keine-gruende-gegen-gewerbegebiet-am-lech_a156324
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/maierhoefen-investiert-kraeftig-in-gewerbegebiet_a157483
+2019/06/26 10:27:01.848360 https://www.all-in.de/kempten/c-lokales/gewerbegebiet-trotz-einwaenden_a158405
+2019/06/26 10:27:01.848360 https://www.all-in.de/kaufbeuren/c-lokales/gemeinderat-kaltental-gewerbegebiet-blonhofen-kann-wachsen-roemerturm-wird-gereinigt_a1586220
+2019/06/26 10:27:01.848360 main: completed

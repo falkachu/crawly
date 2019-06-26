@@ -8,11 +8,9 @@ import (
 	"log"
 	"net/http"
 	"strings"
-	"sync"
 )
 
-var KEYWORDS = [...]string{"gewerbegebiet", "industriegebiet"}
-var URLAA = "https://www.augsburger-allgemeine.de/news.xml"
+var KEYWORDS = [...]string{"gewerbegebiet", "industriegebiet", "investition", "investiert"}
 
 // check for error message
 func check(err error) {
@@ -70,59 +68,19 @@ func getData(url string) []byte {
 	return body
 }
 
-func filterKeywords(dest interface{}) {
-	log.Println("checking keywords...")
+func CrawlUrl(url string) {
+	log.Println("crawling " + url)
 
-	switch tsrc := dest.(type) {
-
-	case *NewsAA:
-		var filterNews NewsAA
-
-		log.Println("type identified as NewsAA")
-
-		for _, n := range tsrc.News {
-			if strings.Contains(strings.ToLower(n.URL), "usa") {
-				filterNews.News = append(filterNews.News, n)
-			}
-		}
-
-		if len(filterNews.News) == 0 {
-			log.Println("no elements found")
-		}
-
-		*tsrc = filterNews
-
-	default:
-		log.Panic("unkown type")
-	}
-}
-
-func Crawl(source string){
-	switch source{
-
-	case "augsburger":
-		var newsAA NewsAA
-		body := getData(URLAA)
-		parseXml(&body, &newsAA)
-		filterKeywords(&newsAA)
-
-		for _, n := range newsAA.News {
-			log.Println(n.Title)
-		}
-	}
-}
-
-func CrawlMultiURL(wg *sync.WaitGroup, url string) {
-	defer wg.Done()
-
-	var augsburger NewsAA
+	var news News
 
 	body := getData(url)
-	parseXml(&body, &augsburger)
-	filterKeywords(&augsburger)
+	parseXml(&body, &news)
+	news.filterKeywords()
 
-	for _, n := range augsburger.News {
+	for _, n := range news.NewsEntries {
 		log.Println(n.URL)
 	}
 }
+
+
 
