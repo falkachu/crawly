@@ -69,20 +69,6 @@ func getData(url string) []byte {
 	return body
 }
 
-func CrawlUrl(url string) {
-	log.Println("crawling " + url)
-
-	var news NewsCollection
-
-	body := getData(url)
-	parseXml(&body, &news)
-	news.filterKeywords()
-
-	for _, n := range news.NewsEntries {
-		log.Println(n.URL)
-	}
-}
-
 func crawlUrlSync(wg *sync.WaitGroup, url string) {
 	defer wg.Done()
 

@@ -7,6 +7,7 @@ import (
 )
 
 type NewsCollection struct {
+	Index       string
 	NewsEntries []NewsEntry `xml:"url"`
 }
 
@@ -26,9 +27,15 @@ type Sitemap struct {
 }
 
 func NewSitemapCollection(index string) SitemapCollection {
-	var newsitemaps SitemapCollection
-	newsitemaps.Index = index
-	return newsitemaps
+	var smapscoll SitemapCollection
+	smapscoll.Index = index
+	return smapscoll
+}
+
+func NewNewsCollection(index string) NewsCollection{
+	var newscoll NewsCollection
+	newscoll.Index = index
+	return newscoll
 }
 
 func (smpacoll *SitemapCollection) Crawl() {
@@ -37,7 +44,7 @@ func (smpacoll *SitemapCollection) Crawl() {
 
 	// Crawling
 	data := getData(smpacoll.Index)
-	parseXml(&data, &smpacoll)
+	parseXml(&data, smpacoll)
 
 	for i := range smpacoll.Sitemaps {
 		log.Println(smpacoll.Sitemaps[i].URL)
@@ -70,4 +77,16 @@ func (news *NewsCollection) filterKeywords() {
 	}
 
 	news.NewsEntries = filterNews.NewsEntries
+}
+
+func (news *NewsCollection) Crawl(){
+	log.Println("crawling " + news.Index)
+
+	body := getData(news.Index)
+	parseXml(&body, news)
+	news.filterKeywords()
+
+	for _, n := range news.NewsEntries {
+		log.Println(n.URL)
+	}
 }
