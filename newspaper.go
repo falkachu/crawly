@@ -6,7 +6,7 @@ import (
 	"sync"
 )
 
-type News struct {
+type NewsCollection struct {
 	NewsEntries []NewsEntry `xml:"url"`
 }
 
@@ -15,7 +15,7 @@ type NewsEntry struct {
 	Lastmod string `xml:"lastmod"`
 }
 
-type Sitemaps struct {
+type SitemapCollection struct {
 	Index    string
 	Sitemaps []Sitemap `xml:"sitemap"`
 }
@@ -25,41 +25,25 @@ type Sitemap struct {
 	Lastmod string `xml:"lastmod"`
 }
 
-func NewSitemaps(index string) Sitemaps {
-	var newsitemaps Sitemaps
+func NewSitemapCollection(index string) SitemapCollection {
+	var newsitemaps SitemapCollection
 	newsitemaps.Index = index
 	return newsitemaps
 }
 
-func (smap *Sitemap) Crawl(wg *sync.WaitGroup) {
-	defer wg.Done()
-
-	log.Println("crawling " + smap.URL)
-
-	var news News
-
-	body := getData(smap.URL)
-	parseXml(&body, &news)
-	news.filterKeywords()
-
-	for _, n := range news.NewsEntries {
-		log.Println(n.URL)
-	}
-}
-
-func (smaps *Sitemaps) Crawl() {
+func (smpacoll *SitemapCollection) Crawl() {
 	// Vars
 	var wg sync.WaitGroup
 
 	// Crawling
-	data := getData(smaps.Index)
-	parseXml(&data, &smaps)
+	data := getData(smpacoll.Index)
+	parseXml(&data, &smpacoll)
 
-	for i := range smaps.Sitemaps {
-		log.Println(smaps.Sitemaps[i].URL)
+	for i := range smpacoll.Sitemaps {
+		log.Println(smpacoll.Sitemaps[i].URL)
 		log.Println("main: starting worker ", i)
 		wg.Add(1)
-		go smaps.Sitemaps[i].Crawl(&wg)
+		go crawlUrlSync(&wg, smpacoll.Sitemaps[i].URL)
 	}
 
 	log.Println("main: waiting for workers to finish...")
@@ -67,10 +51,10 @@ func (smaps *Sitemaps) Crawl() {
 	log.Println("main: completed")
 }
 
-func (news *News) filterKeywords() {
+func (news *NewsCollection) filterKeywords() {
 	log.Println("filtering keywords...")
 
-	var filterNews News
+	var filterNews NewsCollection
 
 	for _, n := range news.NewsEntries {
 		for _, k := range KEYWORDS {
