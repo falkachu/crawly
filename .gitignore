@@ -19,3 +19,6 @@
 
 # TXT Files
 *.txt
+
+# Bat
+*.bat
