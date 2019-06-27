@@ -27,16 +27,16 @@ type Sitemap struct {
 }
 
 // NewSitemapCollection constructor new SitemapCollection object
-func NewSitemapCollection(index string) SitemapCollection {
+func NewSitemapCollection(url string) SitemapCollection {
 	var smapscoll SitemapCollection
-	smapscoll.Url = index
+	smapscoll.Url = url
 	return smapscoll
 }
 
 // NewNewsCollection constructor new NewsCollection object
-func NewNewsCollection(index string) NewsCollection{
+func NewNewsCollection(url string) NewsCollection{
 	var newscoll NewsCollection
-	newscoll.Url = index
+	newscoll.Url = url
 	return newscoll
 }
 
