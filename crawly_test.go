@@ -9,7 +9,7 @@ import (
 func TestCrawlMulti(t *testing.T) {
 
 	// Vars
-	smaps := NewSitemapCollection("https://www.all-in.de/sitemap.xml")
+	smaps := NewSitemapCollection("https://www.augsburger-allgemeine.de/sitemap.xml")
 
 
 	// Logger Configuration

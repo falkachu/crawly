@@ -44,6 +44,8 @@ func NewNewsCollection(url string) NewsCollection{
 func (smapcoll *SitemapCollection) Crawl() {
 	// Vars
 	var wg sync.WaitGroup
+	ch := make(chan int, 10)
+	defer close(ch)
 
 	// get sitemap data, parse xml to sitemap struct
 	data := getData(smapcoll.Url)
@@ -51,13 +53,13 @@ func (smapcoll *SitemapCollection) Crawl() {
 
 	// crawl all sitemap urls
 	for i := range smapcoll.Sitemaps {
+		ch <- 1
 		log.Println(smapcoll.Sitemaps[i].Url)
 		log.Println("main: starting worker ", i)
 		wg.Add(1)
 		newscoll := NewNewsCollection(smapcoll.Sitemaps[i].Url)
-		go newscoll.crawlSync(&wg)
+		go newscoll.crawlSync(&wg, ch)
 	}
-
 	log.Println("main: waiting for workers to finish...")
 	wg.Wait()
 	log.Println("main: completed")
@@ -101,7 +103,7 @@ func (news *NewsCollection) Crawl(){
 }
 
 // crawlSync like NewsCollection.Crawl() but with Waitgroup for crawling multiple websites in parallel
-func (news *NewsCollection) crawlSync(wg *sync.WaitGroup){
+func (news *NewsCollection) crawlSync(wg *sync.WaitGroup, ch chan int){
 	defer wg.Done()
 
 	log.Println("crawling " + news.Url)
@@ -115,4 +117,6 @@ func (news *NewsCollection) crawlSync(wg *sync.WaitGroup){
 	for _, n := range news.NewsEntries {
 		log.Println(n.Url)
 	}
+
+	<-ch
 }
