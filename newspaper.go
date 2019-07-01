@@ -44,7 +44,7 @@ func NewNewsCollection(url string) NewsCollection{
 func (smapcoll *SitemapCollection) Crawl() {
 	// Vars
 	var wg sync.WaitGroup
-	ch := make(chan int, 10)
+	ch := make(chan int, 5)
 	defer close(ch)
 
 	// get sitemap data, parse xml to sitemap struct
