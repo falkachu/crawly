@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"time"
 )
 
 var KEYWORDS = [...]string{"gewerbegebiet", "industriegebiet", "investition", "investiert"}
@@ -50,7 +51,12 @@ func getData(url string) []byte {
 
 	var body []byte
 
-	resp, err := http.Get(url)
+	// define client with timeout of 10 seconds
+	var netClient = &http.Client{
+		Timeout: time.Second * 10,
+	}
+
+	resp, err := netClient.Get(url)
 	check(err)
 	defer resp.Body.Close()
 
