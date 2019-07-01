@@ -57,8 +57,11 @@ func getData(url string) []byte {
 	}
 
 	resp, err := netClient.Get(url)
-	check(err)
 	defer resp.Body.Close()
+	if err != nil{
+		log.Println(err)
+		return []byte("")
+	}
 
 	// check for gzip data, unzip if needed
 	if strings.Contains(url, ".gz") {
