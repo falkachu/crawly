@@ -113,10 +113,7 @@ func (news *NewsCollection) crawlSync(wg *sync.WaitGroup, ch chan int){
 	parseXml(&body, news)
 	news.filterKeywords()
 
-	// log crawled news
-	for _, n := range news.NewsEntries {
-		log.Println(n.Url)
-	}
+	log.Println(" entries found", len(news.NewsEntries))
 
 	<-ch
 }

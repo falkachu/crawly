@@ -47,7 +47,7 @@ func parseXml(xmldata *[]byte, dest interface{}) {
 
 // getData get data from url and return the byte array
 func getData(url string) []byte {
-	log.Println("getting data from url...")
+	log.Println("getting data from URL: ", url)
 
 	var body []byte
 
