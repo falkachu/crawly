@@ -21,7 +21,7 @@ func check(err error) {
 }
 
 // Gunzip unzip data from byte array
-func gUnzip(zipdata io.Reader) []byte {
+func GUnzip(zipdata io.Reader) []byte {
 	log.Println("unzipping data...")
 	zw, err := gzip.NewReader(zipdata)
 	check(err)
@@ -38,15 +38,15 @@ func gUnzip(zipdata io.Reader) []byte {
 }
 
 // parseXML parse xml byte data into struct
-func parseXml(xmldata *[]byte, dest interface{}) {
+func ParseXML(xmldata *[]byte, dest interface{}) {
 	log.Println("parsing xml...")
 	// Try to Unsmarshal XML to Struct Slice
 	check(xml.Unmarshal(*xmldata, &dest))
 	log.Println("xml parsed")
 }
 
-// getData get data from url and return the byte array
-func getData(url string) []byte {
+// GetData get data from url and return the byte array
+func GetData(url string) []byte {
 	log.Println("getting data from URL: ", url)
 
 	var body []byte
@@ -66,7 +66,7 @@ func getData(url string) []byte {
 	// check for gzip data, unzip if needed
 	if strings.Contains(url, ".gz") {
 		log.Println("content encoded with gzip")
-		body = gUnzip(resp.Body)
+		body = GUnzip(resp.Body)
 	} else {
 		log.Println("content not encoded")
 		body, err = ioutil.ReadAll(resp.Body)

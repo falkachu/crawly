@@ -48,8 +48,8 @@ func (smapcoll *SitemapCollection) Crawl() {
 	defer close(ch)
 
 	// get sitemap data, parse xml to sitemap struct
-	data := getData(smapcoll.Url)
-	parseXml(&data, smapcoll)
+	data := GetData(smapcoll.Url)
+	ParseXML(&data, smapcoll)
 
 	// crawl all sitemap urls
 	for i := range smapcoll.Sitemaps {
@@ -58,15 +58,15 @@ func (smapcoll *SitemapCollection) Crawl() {
 		log.Println("main: starting worker ", i)
 		wg.Add(1)
 		newscoll := NewNewsCollection(smapcoll.Sitemaps[i].Url)
-		go newscoll.crawlSync(&wg, ch)
+		go newscoll.CrawlSync(&wg, ch)
 	}
 	log.Println("main: waiting for workers to finish...")
 	wg.Wait()
 	log.Println("main: completed")
 }
 
-// filterKeywords filter crawled news
-func (news *NewsCollection) filterKeywords() {
+// FilterKeywords filter crawled news
+func (news *NewsCollection) FilterKeywords() {
 	log.Println("filtering keywords...")
 
 	var filterNews NewsCollection
@@ -92,9 +92,9 @@ func (news *NewsCollection) Crawl(){
 	log.Println("crawling " + news.Url)
 
 	// get data, parse xml to news struct, filter news
-	body := getData(news.Url)
-	parseXml(&body, news)
-	news.filterKeywords()
+	body := GetData(news.Url)
+	ParseXML(&body, news)
+	news.FilterKeywords()
 
 	// log crawled news
 	for _, n := range news.NewsEntries {
@@ -102,16 +102,16 @@ func (news *NewsCollection) Crawl(){
 	}
 }
 
-// crawlSync like NewsCollection.Crawl() but with Waitgroup for crawling multiple websites in parallel
-func (news *NewsCollection) crawlSync(wg *sync.WaitGroup, ch chan int){
+// CrawlSync like NewsCollection.Crawl() but with Waitgroup for crawling multiple websites in parallel
+func (news *NewsCollection) CrawlSync(wg *sync.WaitGroup, ch chan int){
 	defer wg.Done()
 
 	log.Println("crawling " + news.Url)
 
 	// get data from url, parse xml to news struct, filter news
-	body := getData(news.Url)
-	parseXml(&body, news)
-	news.filterKeywords()
+	body := GetData(news.Url)
+	ParseXML(&body, news)
+	news.FilterKeywords()
 
 	log.Println(" entries found", len(news.NewsEntries))
 
