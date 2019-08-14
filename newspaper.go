@@ -4,6 +4,7 @@ import (
 	"log"
 	"strings"
 	"sync"
+	"time"
 )
 
 type NewsCollection struct {
@@ -12,8 +13,9 @@ type NewsCollection struct {
 }
 
 type NewsEntry struct {
-	Url     string `xml:"loc"`
-	Lastmod string `xml:"lastmod"`
+	Url       string `xml:"loc"`
+	Lastmod   string `xml:"lastmod"`
+	Timestamp string
 }
 
 type SitemapCollection struct {
@@ -34,7 +36,7 @@ func NewSitemapCollection(url string) SitemapCollection {
 }
 
 // NewNewsCollection constructor new NewsCollection object
-func NewNewsCollection(url string) NewsCollection{
+func NewNewsCollection(url string) NewsCollection {
 	var newscoll NewsCollection
 	newscoll.Url = url
 	return newscoll
@@ -88,7 +90,7 @@ func (news *NewsCollection) FilterKeywords() {
 }
 
 // Crawl crawl website with news entries
-func (news *NewsCollection) Crawl(){
+func (news *NewsCollection) Crawl() {
 	log.Println("crawling " + news.Url)
 
 	// get data, parse xml to news struct, filter news
@@ -96,14 +98,15 @@ func (news *NewsCollection) Crawl(){
 	ParseXML(&body, news)
 	news.FilterKeywords()
 
-	// log crawled news
+	// log crawled news and add timestamp
 	for _, n := range news.NewsEntries {
+		n.Timestamp = time.Now().Format("2006-01-02 15:04:05 MST")
 		log.Println(n.Url)
 	}
 }
 
 // CrawlSync like NewsCollection.Crawl() but with Waitgroup for crawling multiple websites in parallel
-func (news *NewsCollection) CrawlSync(wg *sync.WaitGroup, ch chan int){
+func (news *NewsCollection) CrawlSync(wg *sync.WaitGroup, ch chan int) {
 	defer wg.Done()
 
 	log.Println("crawling " + news.Url)

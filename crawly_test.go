@@ -1,9 +1,11 @@
 package crawly
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"testing"
+	"time"
 )
 
 func TestCrawlMulti(t *testing.T) {
@@ -39,4 +41,8 @@ func TestCrawlUrl(t *testing.T) {
 
 	// Crawling
 	newscoll.Crawl()
+}
+
+func TestMisc(t *testing.T){
+	fmt.Println(time.Now().Format("2006-01-02 15:04:05 MST"))
 }
