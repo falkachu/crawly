@@ -99,9 +99,9 @@ func (news *NewsCollection) Crawl() {
 	news.FilterKeywords()
 
 	// log crawled news and add timestamp
-	for _, n := range news.NewsEntries {
-		n.Timestamp = time.Now().Format("2006-01-02 15:04:05 MST")
-		log.Println(n.Url)
+	for i := range news.NewsEntries {
+		news.NewsEntries[i].Timestamp = time.Now().Format("2006-01-02 15:04:05 MST")
+		log.Println(news.NewsEntries[i].Url)
 	}
 }
 
