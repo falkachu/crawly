@@ -4,7 +4,6 @@ import (
 	"log"
 	"strings"
 	"sync"
-	"time"
 )
 
 type NewsCollection struct {
@@ -99,9 +98,8 @@ func (news *NewsCollection) Crawl() {
 	news.FilterKeywords()
 
 	// log crawled news and add timestamp
-	for i := range news.NewsEntries {
-		news.NewsEntries[i].Timestamp = time.Now().Format("2006-01-02 15:04:05 MST")
-		log.Println(news.NewsEntries[i].Url)
+	for _, n := range news.NewsEntries {
+		log.Println(n.Url)
 	}
 }
 
